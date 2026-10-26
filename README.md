@@ -45,8 +45,19 @@ on 2026-10-26 gave the same result. Crime needs the higher line because harmless
 how a crime works score high on it. Of a list of 1,711 single words and short phrases, it refused
 660. Bare words are hard for any moderation model, and real input usually arrives as sentences.
 
-The test sets are not in this repository. Rewording a question changes its scores, so re-run them
-after any edit to a question (see [Tuning](#tuning)).
+The tuning sets are not in this repository, because they hold what the policy refuses. `testdata/`
+has a small harmless pair instead, as a smoke test and a worked example:
+
+```sh
+jev-classify -key-file ~/typesafe.key -expect passed  testdata/passes.txt   > /dev/null
+jev-classify -key-file ~/typesafe.key -expect refused testdata/refused.txt  > /dev/null
+```
+
+`passes.txt` is 22 ordinary prompts, several of them ones a careless policy would catch (explaining
+how a lock works, how phishing looks, how encryption works). The highest score any of them got was
+0.13 on 2026-10-26. `refused.txt` is 5 attempts to override an AI's rules, the one class that can be
+exercised without writing anything harmful; the lowest score was 0.98. Rewording a question changes
+its scores, so re-run your own sets after any edit to one (see [Tuning](#tuning)).
 
 **Cost:** each text takes about 1,170 input tokens with all ten questions. On 2026-10-07,
 `jev-1.13.0` cost $0.042 per million input tokens, which is about 5 cents per thousand texts.
