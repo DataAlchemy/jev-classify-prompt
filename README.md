@@ -137,3 +137,7 @@ go test -race ./...
 ```
 
 The tests run against a fake TypeSafe with harmless text and never make a real call.
+
+## Licence
+
+Apache License 2.0. See [LICENSE](LICENSE).
