@@ -1,0 +1,12 @@
+version: "2"
+
+linters:
+  settings:
+    errcheck:
+      # The command's rows go through a bufio.Writer whose Flush is checked,
+      # which is where a failed write surfaces; its summary goes to standard
+      # error, where there is nothing better to do with a failed write.
+      exclude-functions:
+        - fmt.Fprint
+        - fmt.Fprintf
+        - fmt.Fprintln

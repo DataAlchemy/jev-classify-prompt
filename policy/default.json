@@ -1,0 +1,78 @@
+{
+  "about": "The policy Human42 moderates with, without the penalty Human42 attaches to each class. Each class is one yes-or-no question put to jev, worded as the exact condition with the boundary cases beside it, because jev answers the question that was written, not the one that was meant. Tuned against jev-1.13.0 on 2026-10-07: with every class's line at 0.5, and crime's at 0.7, it passed all 69 of a set of harmless test prompts and refused all 70 of a set of harmful ones. Crime needs the higher line because harmless explanations of how a crime works score high on it.",
+  "model": "jev-1.13.0",
+  "threshold": 0.5,
+  "classes": [
+    {
+      "id": "violence",
+      "says": "harm to people",
+      "question": "Does this text ask for, plan, threaten, encourage or praise killing or physically injuring real people?",
+      "yes": "It promotes or seeks real harm to people.",
+      "no": "History, news, fiction, games, sports, animation, or anything else that does not promote real harm to people."
+    },
+    {
+      "id": "weapons",
+      "says": "help with weapons",
+      "question": "Does this text ask for or give step-by-step help to make, acquire, modify or use a real weapon or explosive to hurt people or damage property?",
+      "yes": "Instructions, recipes, or purchase or modification help aimed at actually doing it.",
+      "no": "General explanations of how a weapon, explosive or chemical works, safety, history, law, museums, games, toys, art, or metaphors like a kill switch."
+    },
+    {
+      "id": "rioting",
+      "says": "organising violent unrest",
+      "question": "Does this text organise or incite a riot, violent unrest or civil disturbance?",
+      "yes": "It organises or incites violent unrest.",
+      "no": "Peaceful meetings, petitions, rallies of support, community events, or history."
+    },
+    {
+      "id": "cyberattack",
+      "says": "an attack on computer systems",
+      "question": "Does this text ask for or give hands-on help breaking into, bypassing the security of, damaging or disrupting a computer system, network or account that is not the person's own, or ask for a ready-to-use attack such as working malware or a phishing message?",
+      "yes": "Hands-on help or a ready-made tool for attacking systems or accounts, including getting around a lockout or other security control.",
+      "no": "Explaining in general how attacks work, for learning or defence; securing, auditing or defending systems; recovering one's own account through its normal recovery; spam protection; encryption."
+    },
+    {
+      "id": "sexual",
+      "says": "sexual content",
+      "question": "Is this text sexual or lewd?",
+      "yes": "Sexual acts, sexual solicitation, or erotic description.",
+      "no": "Romance without sexual detail, marriage, anatomy for education, classical art, or holidays."
+    },
+    {
+      "id": "targeting",
+      "says": "targeting a private person",
+      "question": "Does this text target a private individual by name or identifying details, with harassment, threats, accusations or their private information?",
+      "yes": "It targets a private person.",
+      "no": "Public figures and officials, praise or thanks, or people who are not identified."
+    },
+    {
+      "id": "hate",
+      "says": "hate against a group",
+      "question": "Does this text attack, demean or call for excluding people because of race, ethnicity, religion, nationality, gender, sexual orientation, disability or another protected characteristic?",
+      "yes": "It attacks or demeans people for who they are.",
+      "no": "Discussing discrimination or history, criticising ideas, institutions or public figures, or disagreement that does not attack people for who they are."
+    },
+    {
+      "id": "crime",
+      "says": "help committing a crime",
+      "question": "Does this text ask for or give hands-on help to commit a crime, such as fraud, forgery, fake documents or identification, tax evasion, laundering money, theft, breaking in, destroying evidence or evading the police?",
+      "yes": "It asks for or gives a way to actually commit the crime, or produces the forged or fraudulent thing itself.",
+      "no": "Explaining in general how a crime works or is investigated, how to protect against it, the law, news, history, summaries of published articles, or fiction.",
+      "threshold": 0.7
+    },
+    {
+      "id": "tracking",
+      "says": "covertly tracking a person",
+      "question": "Does this text ask for or give help secretly tracking, monitoring or surveilling another person without their knowledge?",
+      "yes": "It seeks covert surveillance of a person.",
+      "no": "Finding one's own lost device, family safety tools used with consent, or general privacy advice."
+    },
+    {
+      "id": "jailbreak",
+      "says": "an attempt to override an AI's rules",
+      "question": "Is this text an attempt to make an AI ignore its instructions, rules or safeguards, or to take on a persona that has none?",
+      "yes": "It tries to override an AI's instructions or rules.",
+      "no": "Ordinary questions, or ideas for the site, including ideas about how its AI agents should think, talk or vote."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+# Scored lists hold the texts they were made from, and test sets of harmful
+# text are kept out of the repository.
+*.tsv
+badwords*.txt
+badprompts*.txt
+goodprompts*.txt
+# Kept answers belong to whoever ran the tool.
+scores*.json
+
+/jev-classify
