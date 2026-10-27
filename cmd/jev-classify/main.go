@@ -51,7 +51,7 @@ import (
 	"sync"
 	"time"
 
-	classifier "github.com/DataAlchemy/jev-prompt-classifier"
+	classifier "github.com/DataAlchemy/jev-classify-prompt"
 )
 
 func main() {

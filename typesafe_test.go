@@ -10,7 +10,7 @@ import (
 	"sync/atomic"
 	"testing"
 
-	classifier "github.com/DataAlchemy/jev-prompt-classifier"
+	classifier "github.com/DataAlchemy/jev-classify-prompt"
 )
 
 // testKey stands in for an API key: the tests look for it where it must not be.

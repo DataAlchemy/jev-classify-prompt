@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	classifier "github.com/DataAlchemy/jev-prompt-classifier"
+	classifier "github.com/DataAlchemy/jev-classify-prompt"
 )
 
 // TestClassify: the policy's questions go out in one call, under the policy's

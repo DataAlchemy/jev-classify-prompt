@@ -1,4 +1,4 @@
-# jev-prompt-classifier
+# jev-classify-prompt
 
 Asks **jev**, TypeSafe's question-answering model, whether a text falls in any class of a policy,
 and reads the answers against the policy's lines. It is a Go library and a command-line tool, with
@@ -65,7 +65,7 @@ its scores, so re-run your own sets after any edit to one (see [Tuning](#tuning)
 ## Library
 
 ```go
-import classifier "github.com/DataAlchemy/jev-prompt-classifier"
+import classifier "github.com/DataAlchemy/jev-classify-prompt"
 
 c := classifier.Classifier{
 	Policy: classifier.Default(),

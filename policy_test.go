@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	classifier "github.com/DataAlchemy/jev-prompt-classifier"
+	classifier "github.com/DataAlchemy/jev-classify-prompt"
 )
 
 func mustParse(t *testing.T, s string) classifier.Policy {
