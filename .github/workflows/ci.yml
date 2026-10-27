@@ -1,0 +1,36 @@
+name: ci
+
+# Runs on every pull request and every push to main. It holds no secret and
+# can write nothing: the tests use a fake TypeSafe and never make a real call.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@v7.0.0
+        with:
+          go-version-file: go.mod
+      - name: gofmt
+        run: |
+          unformatted=$(gofmt -l .)
+          if [ -n "$unformatted" ]; then
+            echo "gofmt would change:" >&2
+            echo "$unformatted" >&2
+            exit 1
+          fi
+      - name: vet
+        run: go vet ./...
+      - name: test
+        run: go test -race -count=1 ./...

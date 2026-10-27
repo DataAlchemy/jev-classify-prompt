@@ -149,6 +149,11 @@ go test -race ./...
 
 The tests run against a fake TypeSafe with harmless text and never make a real call.
 
+## Contributing
+
+Pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). Report a vulnerability privately, as
+[SECURITY.md](SECURITY.md) describes.
+
 ## Licence
 
 Apache License 2.0. See [LICENSE](LICENSE).
